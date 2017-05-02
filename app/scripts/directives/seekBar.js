@@ -50,6 +50,16 @@
                 scope.fillStyle = function() {
                     return {width: percentString()};
                 };
+
+                /**
+                * @function thumbStyle
+                * @desc Updates the position of the seek bar thumb.
+                * @param {Object}
+                */
+                scope.thumbStyle = function() {
+                    var percent = calculatePercent(seekBar, event);
+                    return {left: percentString()};
+                };
                 
                 /**
                 * @function onClickSeekBar
