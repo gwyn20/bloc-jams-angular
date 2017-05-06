@@ -85,7 +85,7 @@
         * @desc Current volume of currently playing song
         * @type {Number}
         */
-        SongPlayer.volume = null;
+        SongPlayer.volume = 80;
         
         /**
         * @function SongPlayer.play
@@ -101,6 +101,10 @@
                 if (currentBuzzObject.isPaused()) {
                     playSong(song);
                 }
+            } 
+            if (currentBuzzObject.isEnded()) {
+                currentSongIndex++;
+                playSong(song);
             }
         };
         
